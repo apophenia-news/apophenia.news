@@ -12,15 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @font-face{font-family:"Stain";src:url("https://cdn.jsdelivr.net/gh/multipleof4/stain.otf@master/dist/Stain.otf") format("opentype")}
     body{font-family:Inter,system-ui,-apple-system,sans-serif}
     .mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
-    .stain{font-family:"Stain",Georgia,serif}
-    .prose h2{font-family:Inter,system-ui,sans-serif;font-size:1.25rem;font-weight:700;margin-top:2rem;margin-bottom:.75rem;color:#111827}
-    .prose h3{font-family:Inter,system-ui,sans-serif;font-size:1.1rem;font-weight:600;margin-top:1.5rem;margin-bottom:.5rem;color:#1f2937}
-    .prose p{margin-bottom:1rem;line-height:1.85;color:#374151}
+    .prose h2{font-size:1.25rem;font-weight:700;margin-top:2rem;margin-bottom:.75rem;color:#111827}
+    .prose h3{font-size:1.1rem;font-weight:600;margin-top:1.5rem;margin-bottom:.5rem;color:#1f2937}
+    .prose p{margin-bottom:1rem;line-height:1.75;color:#374151}
     .prose ul,.prose ol{margin-bottom:1rem;padding-left:1.5rem;color:#374151}
-    .prose li{margin-bottom:.375rem;line-height:1.8}
+    .prose li{margin-bottom:.375rem;line-height:1.7}
     .prose ul{list-style:disc}
     .prose ol{list-style:decimal}
     .prose blockquote{border-left:3px solid #d1d5db;padding-left:1rem;margin:1.5rem 0;color:#6b7280;font-style:italic}
@@ -48,7 +46,7 @@
         </div>
       </header>
 
-      <div class="prose stain text-lg">
+      <div class="prose">
         {{body}}
       </div>
     </article>
