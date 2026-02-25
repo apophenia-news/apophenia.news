@@ -1,0 +1,17 @@
+{
+  "name": "apophenia.news",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npm run build && npx vite dist --open",
+    "preview": "npx vite preview dist"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.4"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
