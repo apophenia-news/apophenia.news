@@ -6,7 +6,9 @@ import { marked } from "marked";
 
 const ROOT = process.cwd();
 const SRC = path.join(ROOT, "src");
+const PUBLIC = path.join(ROOT, "public");
 const ARTICLES_GLOB = "articles/**/index.md";
+const SITE_URL = (process.env.SITE_URL || "https://apophenia.news").replace(/\/+$/, "");
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -27,7 +29,7 @@ const logo = `
   <circle cx="60" cy="60" r="10" fill="#111827"/>
 </svg>`;
 
-const shellHead = ({ title, desc, image }) => `<!doctype html>
+const shellHead = ({ title, desc, image, url, type = "website" }) => `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -36,9 +38,12 @@ const shellHead = ({ title, desc, image }) => `<!doctype html>
   <meta name="description" content="${escapeHtml(desc || "")}" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml(desc || "")}" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="${type}" />
+  ${url ? `<meta property="og:url" content="${url}" />` : ""}
   ${image ? `<meta property="og:image" content="${image}" />` : ""}
   <meta name="theme-color" content="#fcfcfa" />
+  ${url ? `<link rel="canonical" href="${url}" />` : ""}
+  <link rel="alternate" type="application/rss+xml" title="apophenia.news RSS" href="${SITE_URL}/rss.xml" />
   <script type="module" src="/main.js"></script>
 </head>
 <body>
@@ -59,11 +64,13 @@ const nav = `
     </button>
     <nav class="hidden sm:flex items-center gap-6 text-sm">
       <a href="/">Home</a>
-      <a href="#latest">Latest</a>
+      <a href="/write/">Become a writer</a>
+      <a href="/rss.xml">RSS</a>
     </nav>
     <nav class="sm:hidden absolute left-4 right-4 top-[70px] card p-3" x-show="open" x-transition>
       <a class="block py-1.5" href="/">Home</a>
-      <a class="block py-1.5" href="#latest">Latest</a>
+      <a class="block py-1.5" href="/write/">Become a writer</a>
+      <a class="block py-1.5" href="/rss.xml">RSS</a>
     </nav>
   </div>
 </header>
@@ -85,6 +92,9 @@ const fmtDate = (date) =>
 const escapeHtml = (s = "") =>
   s.replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
 
+const escapeXml = (s = "") =>
+  s.replace(/[<>&'"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
+
 const fixInternalLinks = (html) =>
   html
     .replace(/href="\.\//g, 'href="/')
@@ -98,7 +108,9 @@ const renderHome = (articles) => `
 ${shellHead({
   title: "apophenia.news — The news outlet for pattern seekers",
   desc: "Signals, anomalies, civilization trajectories, and deep pattern analysis.",
-  image: "https://direct-img.link/constellation+data+points+minimal+white+background"
+  image: "https://direct-img.link/constellation+data+points+minimal+white+background",
+  url: `${SITE_URL}/`,
+  type: "website"
 })}
 ${nav}
 <main class="shell py-10">
@@ -108,7 +120,7 @@ ${nav}
     <p class="mt-4 text-zinc-700 max-w-2xl">High-agency analysis at the intersection of AGI, consciousness, geopolitics, and first-contact logic.</p>
   </section>
 
-  <section id="latest" class="mt-10">
+  <section class="mt-10">
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-2xl font-bold">Latest Articles</h2>
       <span class="text-sm text-zinc-500">${articles.length} published</span>
@@ -143,7 +155,13 @@ ${footer}
 `;
 
 const renderArticle = (article) => `
-${shellHead({ title: `${article.title} — apophenia.news`, desc: article.description, image: article.header_image })}
+${shellHead({
+  title: `${article.title} — apophenia.news`,
+  desc: article.description,
+  image: article.header_image,
+  url: `${SITE_URL}/${article.slug}/`,
+  type: "article"
+})}
 ${nav}
 <main class="shell py-10">
   <article class="card overflow-hidden">
@@ -169,6 +187,58 @@ ${nav}
 ${footer}
 `;
 
+const renderWritePage = () => `
+${shellHead({
+  title: "Become a writer for apophenia.news",
+  desc: "Pitch your pattern analysis. Email your story as a Markdown file for review and publication.",
+  image: "https://direct-img.link/writer+typing+cosmic+newsroom+editorial",
+  url: `${SITE_URL}/write/`,
+  type: "website"
+})}
+${nav}
+<main class="shell py-10">
+  <article class="card p-6 sm:p-10">
+    <p class="tag mb-3"><i data-lucide="pen-line" class="h-3.5 w-3.5"></i>Contributor Program</p>
+    <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Become a writer for apophenia.news</h1>
+    <p class="mt-4 text-zinc-700 max-w-3xl">
+      Have a strong pattern-based story, analysis, or investigation? Send it to us.
+    </p>
+
+    <div class="article-prose mt-8">
+      <h2>How to submit</h2>
+      <ul>
+        <li>Write your article in a <strong>.md (Markdown)</strong> file.</li>
+        <li>Email it to <a href="mailto:planetrenox@pm.me">planetrenox@pm.me</a>.</li>
+        <li>If approved, your story will be published on apophenia.news.</li>
+        <li>Your byline can use your real name or an alias.</li>
+      </ul>
+
+      <h2>Submission tips</h2>
+      <ul>
+        <li>Lead with a clear thesis and strong evidence.</li>
+        <li>Use links/citations when making factual claims.</li>
+        <li>Include a short author bio line if you want one shown.</li>
+        <li>Add a suggested title, slug, description, and tags at the top (frontmatter preferred).</li>
+      </ul>
+
+      <h2>Frontmatter template (optional)</h2>
+      <pre><code>---
+title: "Your headline"
+slug: your-slug
+date: 2026-03-01
+author: Your Name or Alias
+description: "1-2 sentence summary"
+header_image: https://direct-img.link/your+image+query
+tags:
+  - your-tag
+  - another-tag
+---</code></pre>
+    </div>
+  </article>
+</main>
+${footer}
+`;
+
 const ensureCleanGenerated = async () => {
   await fs.mkdir(SRC, { recursive: true });
   const children = await fs.readdir(SRC, { withFileTypes: true });
@@ -178,6 +248,74 @@ const ensureCleanGenerated = async () => {
       .filter((d) => d.isDirectory() && !keep.has(d.name))
       .map((d) => fs.rm(path.join(SRC, d.name), { recursive: true, force: true }))
   );
+};
+
+const toISODate = (d) => new Date(d).toISOString().split("T")[0];
+
+const renderRss = (articles) => {
+  const lastBuildDate = new Date().toUTCString();
+  const items = articles
+    .map((a) => {
+      const link = `${SITE_URL}/${a.slug}/`;
+      return `<item>
+  <title>${escapeXml(a.title || "")}</title>
+  <link>${escapeXml(link)}</link>
+  <guid>${escapeXml(link)}</guid>
+  <pubDate>${new Date(a.date).toUTCString()}</pubDate>
+  <description>${escapeXml(a.description || "")}</description>
+</item>`;
+    })
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>apophenia.news</title>
+  <link>${SITE_URL}/</link>
+  <description>Signals, anomalies, civilization trajectories, and deep pattern analysis.</description>
+  <language>en-us</language>
+  <lastBuildDate>${lastBuildDate}</lastBuildDate>
+  ${items}
+</channel>
+</rss>
+`;
+};
+
+const renderSitemap = (articles) => {
+  const now = toISODate(new Date());
+  const urls = [
+    { loc: `${SITE_URL}/`, lastmod: now },
+    { loc: `${SITE_URL}/write/`, lastmod: now },
+    ...articles.map((a) => ({ loc: `${SITE_URL}/${a.slug}/`, lastmod: toISODate(a.date || new Date()) }))
+  ];
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (u) => `  <url>
+    <loc>${escapeXml(u.loc)}</loc>
+    <lastmod>${u.lastmod}</lastmod>
+  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+};
+
+const renderRobots = () => `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+
+const writeDiscoveryFiles = async (articles) => {
+  await fs.mkdir(PUBLIC, { recursive: true });
+  await Promise.all([
+    fs.writeFile(path.join(PUBLIC, "rss.xml"), renderRss(articles), "utf8"),
+    fs.writeFile(path.join(PUBLIC, "sitemap.xml"), renderSitemap(articles), "utf8"),
+    fs.writeFile(path.join(PUBLIC, "robots.txt"), renderRobots(), "utf8")
+  ]);
 };
 
 const run = async () => {
@@ -201,13 +339,19 @@ const run = async () => {
   await ensureCleanGenerated();
   await fs.writeFile(path.join(SRC, "index.html"), renderHome(articles), "utf8");
 
+  const writeDir = path.join(SRC, "write");
+  await fs.mkdir(writeDir, { recursive: true });
+  await fs.writeFile(path.join(writeDir, "index.html"), renderWritePage(), "utf8");
+
   for (const article of articles) {
     const dir = path.join(SRC, article.slug);
     await fs.mkdir(dir, { recursive: true });
     await fs.writeFile(path.join(dir, "index.html"), renderArticle(article), "utf8");
   }
 
-  console.log(`Generated ${articles.length} article pages + home.`);
+  await writeDiscoveryFiles(articles);
+
+  console.log(`Generated ${articles.length} article pages + home + write + rss/sitemap/robots.`);
 };
 
 run().catch((err) => {
