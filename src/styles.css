@@ -1,0 +1,51 @@
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/source-serif-4/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased font-sans;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(79, 70, 229, 0.08), transparent 30%),
+      radial-gradient(circle at 90% 5%, rgba(59, 130, 246, 0.08), transparent 30%);
+  }
+
+  h1, h2, h3 {
+    @apply font-serif tracking-tight;
+  }
+
+  a {
+    @apply text-accent transition hover:text-indigo-700;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white border border-zinc-200/80 rounded-2xl shadow-card;
+  }
+
+  .brand-glow {
+    filter: drop-shadow(0 6px 16px rgba(79, 70, 229, 0.2));
+  }
+
+  .article-prose {
+    @apply prose prose-zinc max-w-none prose-headings:font-serif prose-headings:text-zinc-900 prose-p:text-zinc-800 prose-li:text-zinc-800 prose-strong:text-zinc-900 prose-a:text-indigo-600 hover:prose-a:text-indigo-700 prose-img:rounded-xl prose-img:shadow-md;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border border-indigo-200 bg-soft text-indigo-700;
+  }
+}
