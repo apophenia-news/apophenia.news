@@ -35,5 +35,5 @@ jobs:
       - name: Commit dist directory
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(build): update dist [skip ci]"
+          commit_message: "chore(build): update dist"
           file_pattern: dist/**
