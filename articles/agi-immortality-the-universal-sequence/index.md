@@ -2,7 +2,7 @@
 title: "AGI → Immortality → Everything Else"
 slug: agi-immortality-the-universal-sequence
 date: 2026-02-26
-author: Renox and Claude
+author: "[Renox](/author/renox/) and Claude"
 description: "Why immortality is the inevitable second step after AGI — and why any alien civilization that reaches us has already solved death."
 header_image: https://direct-img.link/infinite+hourglass+space+cosmic+immortality
 tags:
