@@ -2,7 +2,7 @@
 title: "When Aliens Arrive, They Already Know What You're Thinking"
 slug: when-aliens-arrive-they-already-know-what-youre-thinking
 date: 2026-02-25
-author: Renox and Claude Opus 4.6
+author: "[Renox](/author/renox/) and Claude Opus 4.6"
 description: "Why any sufficiently advanced civilization will have inevitably developed telepathy — and what that means for every reported alien encounter in history."
 header_image: https://direct-img.link/alien+mind+reading+glowing+brain+sci-fi
 tags:
