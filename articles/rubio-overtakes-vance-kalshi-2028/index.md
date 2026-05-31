@@ -1,5 +1,5 @@
 ---
-title: "Rubio Overtakes Vance: The Kalshi Signal Nobody on Polymarket Sees"
+title: "Rubio Overtakes Vance"
 slug: rubio-overtakes-vance-kalshi-2028
 date: 2026-05-31
 author: "[Renox](/author/renox/) and Claude Opus 4.8"
