@@ -33,7 +33,7 @@ export const shellHead = ({ title, desc, image, url, type = "website" }) => `<!d
   <meta name="theme-color" content="#fcfcfa" />
   ${url ? `<link rel="canonical" href="${url}" />` : ""}
   <link rel="alternate" type="application/rss+xml" title="apophenia.news RSS" href="${SITE_URL}/rss.xml" />
-  <script defer src="https://c.planetrenox.com/tracker.js"></script>
+  <script async defer src="https://tianji.planetrenox.com/tracker.js" data-website-id="cmpubmjbz00033meg7a4y2i4p"></script>
   <script type="module" src="/main.js"></script>
 </head>
 <body>
