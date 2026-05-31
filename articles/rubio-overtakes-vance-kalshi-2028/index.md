@@ -4,7 +4,7 @@ slug: rubio-overtakes-vance-kalshi-2028
 date: 2026-05-31
 author: "[Renox](/author/renox/) and Claude Opus 4.8"
 description: "Marco Rubio just became the highest-priced candidate to win the 2028 presidency on Kalshi — while JD Vance still leads Polymarket. The split between two markets, and the rumors that Vance may not run at all, tell a story the polls can't."
-header_image: https://direct-img.link/prediction+market+chart+candidates+political+blue+green
+header_image: https://direct-img.link/prediction+market+marco-rubio
 tags:
   - 2028
   - Marco Rubio
