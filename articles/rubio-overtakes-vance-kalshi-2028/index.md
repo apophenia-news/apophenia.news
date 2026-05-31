@@ -20,7 +20,7 @@ tags:
 
 # Rubio Overtakes Vance: The Kalshi Signal Nobody on Polymarket Sees
 
-![Prediction market chart](https://direct-img.link/prediction+market+chart+candidates+political+blue+green)
+![Prediction market chart](https://direct-img.link/prediction+market+marco-rubio)
 
 ## The Crossover
 
