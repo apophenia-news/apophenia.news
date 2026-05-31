@@ -32,6 +32,7 @@ export const shellHead = ({ title, desc, image, url, type = "website" }) => `<!d
   ${image ? `<meta property="og:image" content="${image}" />` : ""}
   <meta name="theme-color" content="#fcfcfa" />
   ${url ? `<link rel="canonical" href="${url}" />` : ""}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="apophenia.news RSS" href="${SITE_URL}/rss.xml" />
   <script data-goatcounter="https://apophenia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="module" src="/main.js"></script>
