@@ -4,10 +4,10 @@ export const fmtDate = (date) =>
 export const toISODate = (d) => new Date(d).toISOString().split("T")[0];
 
 export const escapeHtml = (s = "") =>
-  s.replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+  String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
 
 export const escapeXml = (s = "") =>
-  s.replace(/[<>&'"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
+  String(s ?? "").replace(/[<>&'"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': " &quot;" }[ch]));
 
 export const fixInternalLinks = (html) =>
   html
