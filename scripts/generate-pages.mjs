@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { ARTICLES_GLOB, AUTHOR_PAGES, ROOT, SRC } from "./lib/constants.mjs";
 import { fixInternalLinks } from "./lib/utils.mjs";
-import { renderArticle, renderHome, renderWritePage, renderAuthorPage } from "./lib/renderers.mjs";
+import { renderArticle, renderHome, renderWritePage, renderNewsletterPage, renderAuthorPage } from "./lib/renderers.mjs";
 import { ensureCleanGenerated, writeDiscoveryFiles, writePage } from "./lib/io.mjs";
 
 marked.setOptions({ breaks: true, gfm: true });
@@ -30,6 +30,7 @@ const run = async () => {
 
   await writePage([SRC, "index.html"], renderHome(articles));
   await writePage([SRC, "write", "index.html"], renderWritePage());
+  await writePage([SRC, "newsletter", "index.html"], renderNewsletterPage());
 
   for (const author of AUTHOR_PAGES) {
     await writePage([SRC, "author", author.slug, "index.html"], renderAuthorPage(author));
@@ -41,7 +42,7 @@ const run = async () => {
 
   await writeDiscoveryFiles(articles, AUTHOR_PAGES);
 
-  console.log(`Generated ${articles.length} article pages + home + write + author pages + rss/sitemap/robots.`);
+  console.log(`Generated ${articles.length} article pages + home + write + newsletter + author pages + rss/sitemap/robots.`);
 };
 
 run().catch((err) => {
