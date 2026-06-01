@@ -85,6 +85,98 @@ ${nav}
 ${footer}
 `;
 
+export const renderNewsletterPage = () => `
+${shellHead({
+  title: "Newsletter — apophenia.news",
+  desc: "Subscribe to the apophenia.news newsletter. We won't spam you with everything — only the good stuff.",
+  image: "https://direct-img.link/cosmic+newsletter+signal+envelope+minimal",
+  url: `${SITE_URL}/newsletter/`,
+  type: "website"
+})}
+${nav}
+<main class="shell py-10">
+  <article class="card p-6 sm:p-10 bg-gradient-to-b from-white to-indigo-50/50">
+    <p class="tag mb-3"><i data-lucide="mail" class="h-3.5 w-3.5"></i>Newsletter</p>
+    <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Get the signal, skip the noise</h1>
+    <p class="mt-4 text-zinc-700 max-w-2xl">
+      The sharpest pattern analysis, delivered straight to your inbox. <strong>We won't spam you with everything — only the good stuff.</strong> No filler, no daily blasts, just the pieces worth your attention.
+    </p>
+
+    <form
+      class="mt-8 max-w-xl"
+      x-data="{
+        email: '',
+        loading: false,
+        ok: false,
+        error: '',
+        async submit() {
+          this.error = '';
+          this.ok = false;
+          this.loading = true;
+          try {
+            const res = await fetch('https://newsletter.planetrenox.com/api/sub', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ pool: 'apophenia', email: this.email })
+            });
+            const data = await res.json();
+            if (res.ok && data.ok) {
+              this.ok = true;
+              this.email = '';
+            } else {
+              this.error = data.error === 'invalid email' ? 'That email doesn\\'t look right.' : 'Something went wrong. Please try again.';
+            }
+          } catch (e) {
+            this.error = 'Network error. Please try again.';
+          }
+          this.loading = false;
+        }
+      }"
+      @submit.prevent="submit"
+    >
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          required
+          placeholder="you@example.com"
+          x-model="email"
+          :disabled="loading"
+          class="flex-1 rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          aria-label="Email address"
+        />
+        <button
+          type="submit"
+          :disabled="loading"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-60"
+        >
+          <span x-show="!loading">Subscribe</span>
+          <span x-show="loading" x-cloak>Subscribing…</span>
+          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </button>
+      </div>
+
+      <p x-show="ok" x-cloak class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-700">
+        <i data-lucide="check-circle" class="h-4 w-4"></i>
+        You're in. Welcome to the pattern.
+      </p>
+      <p x-show="error" x-cloak class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-rose-700">
+        <i data-lucide="alert-circle" class="h-4 w-4"></i>
+        <span x-text="error"></span>
+      </p>
+
+      <p class="mt-4 text-xs text-zinc-500">Unsubscribe anytime. We never share your email.</p>
+    </form>
+  </article>
+
+  <div class="mt-8">
+    <a href="/" class="inline-flex items-center gap-2 text-sm">
+      <i data-lucide="arrow-left" class="h-4 w-4"></i> Back to Home
+    </a>
+  </div>
+</main>
+${footer}
+`;
+
 export const renderWritePage = () => `
 ${shellHead({
   title: "Become a writer for apophenia.news",
@@ -199,6 +291,7 @@ export const renderSitemap = (articles, authors = []) => {
   const now = toISODate(new Date());
   const urls = [
     { loc: `${SITE_URL}/`, lastmod: now },
+    { loc: `${SITE_URL}/newsletter/`, lastmod: now },
     { loc: `${SITE_URL}/write/`, lastmod: now },
     ...authors.map((a) => ({ loc: `${SITE_URL}/author/${a.slug}/`, lastmod: now })),
     ...articles.map((a) => ({ loc: `${SITE_URL}/${a.slug}/`, lastmod: toISODate(a.date || new Date()) }))
