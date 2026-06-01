@@ -55,11 +55,13 @@ export const nav = `
     </button>
     <nav class="hidden sm:flex items-center gap-6 text-sm">
       <a href="/">Home</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/write/">Become a writer</a>
       <a href="/rss.xml">RSS</a>
     </nav>
     <nav class="sm:hidden absolute left-4 right-4 top-[70px] card p-3" x-show="open" x-transition>
       <a class="block py-1.5" href="/">Home</a>
+      <a class="block py-1.5" href="/newsletter/">Newsletter</a>
       <a class="block py-1.5" href="/write/">Become a writer</a>
       <a class="block py-1.5" href="/rss.xml">RSS</a>
     </nav>
