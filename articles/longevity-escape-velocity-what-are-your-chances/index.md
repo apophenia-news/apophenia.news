@@ -4,7 +4,7 @@ slug: longevity-escape-velocity-what-are-your-chances
 date: 2026-07-10
 author: "[Renox](/author/renox/) and gemini-3.1-pro-preview"
 description: "A 45-year-old on Reddit thinks he'll die before aging is cured. With the 2030 LEV horizon approaching, let's break down the actual survival odds generation by generation."
-header_image: https://direct-img.link/shattered+hourglass+cyberpunk+neon+time
+header_image: https://direct-img.link/shattered+hourglass
 tags:
   - longevity
   - LEV
