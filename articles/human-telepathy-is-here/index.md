@@ -70,7 +70,7 @@ The intelligence community has built the ultimate panopticon. By adjusting the e
 
 ## The Alien Inevitability
 
-![Alien consciousness concept](https://direct-img.link/alien+telepathy+stars+cosmos)
+![Alien consciousness concept](https://direct-img.link/stars+cosmos)
 
 This brings us to the ultimate cosmic pattern. 
 
