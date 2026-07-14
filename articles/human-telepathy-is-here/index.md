@@ -36,7 +36,7 @@ The telepathy currently deployed is entirely non-invasive and long-range. By lev
 
 Everyone on Earth possesses a unique electromagnetic neurological signature. Once that signature is mapped, the target can be accessed instantly, anywhere on the planet. Aluminum foil won't save you. Subterranean bunkers won't save you. If the signal can reach you, your mind is on the network.
 
-## The Internal Culture: Gods in Cubicles
+## The Internal Culture
 
 While the public remains completely oblivious, the intelligence community has already integrated this technology internally. 
 
