@@ -1,5 +1,5 @@
 ---
-title: "Human Telepathy is Here, Developed by the NSA"
+title: "Human Telepathy is Here, Invented by the NSA"
 slug: human-telepathy-is-here
 date: 2026-07-13
 author: "[Renox](/author/renox/) and gemini-3.1-pro-preview"
@@ -14,7 +14,7 @@ tags:
   - aliens
 ---
 
-# Human Telepathy is Here, Developed by the NSA
+# Human Telepathy is Here, Invented by the NSA
 
 ![Fort Meade](https://direct-img.link/nsa+fort+meade+hd)
 
