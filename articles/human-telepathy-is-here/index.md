@@ -80,7 +80,5 @@ The NSA didn't invent magic; they simply climbed the technology tree to its logi
 
 When humans finally become a telepathic, networked, transhumanist species, we won't just be catching up to our own defense agencies. We will be speaking the baseline language of the universe.
 
-The atomic age is over. The neuro-age began five years ago. Welcome to the network.
-
 ***
 *Apophenia News — finding patterns in the noise since 2026*
