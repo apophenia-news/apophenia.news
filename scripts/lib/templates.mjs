@@ -2,6 +2,7 @@ import { SITE_URL } from "./constants.mjs";
 import { escapeHtml } from "./utils.mjs";
 
 const STORE_URL = "https://store.apophenia.news";
+const PRODUCT_URL = `${STORE_URL}/products/pattern-seeker`;
 
 const logo = `
 <svg class="h-10 w-10 brand-glow" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apophenia News logo">
@@ -35,6 +36,41 @@ const navLinks = (cls = "") =>
         `<a ${cls ? `class="${cls}" ` : ""}href="${l.href}"${l.external ? ` target="_blank" rel="noopener"` : ""}>${l.label}</a>`
     )
     .join("\n      ");
+
+const merchShots = [
+  { src: "/merch/apophenia_hoodie_front.avif", alt: "Pattern Seeker zip hoodie — chest mark", origin: "61%_29%", zoom: "2.4" },
+  { src: "/merch/apophenia_hoodie_back.webp", alt: "Pattern Seeker zip hoodie — constellation back print", origin: "50%_38%", zoom: "2.1" }
+];
+
+export const merch = `
+<section class="mt-10 card overflow-hidden bg-gradient-to-b from-white to-indigo-50/60">
+  <div class="p-6 sm:p-8 grid sm:grid-cols-[1fr,340px] gap-8 items-center">
+    <div>
+      <p class="tag mb-3"><i data-lucide="shopping-bag" class="h-3.5 w-3.5"></i>Merch</p>
+      <h2 class="text-2xl sm:text-3xl font-bold leading-tight">Wear the pattern</h2>
+      <p class="mt-3 text-zinc-700 max-w-md">
+        The <strong>Pattern Seeker</strong> heavy-blend zip hoodie — constellation print across the back, quiet mark on the chest.
+      </p>
+      <a href="${PRODUCT_URL}" target="_blank" rel="noopener"
+         class="mt-5 inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700">
+        Shop the hoodie <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+      </a>
+      <p class="mt-3 text-xs text-zinc-500 hidden sm:block">Hover a shot to zoom the print.</p>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      ${merchShots
+        .map(
+          (m) => `<a href="${PRODUCT_URL}" target="_blank" rel="noopener" aria-label="${escapeHtml(m.alt)}"
+        class="block overflow-hidden rounded-xl bg-white/40">
+        <img src="${m.src}" alt="${escapeHtml(m.alt)}" loading="lazy" decoding="async"
+             class="w-full origin-[${m.origin}] transition-transform duration-500 ease-out hover:scale-[${m.zoom}]" />
+      </a>`
+        )
+        .join("\n      ")}
+    </div>
+  </div>
+</section>
+`;
 
 export const shellHead = ({ title, desc, image, url, type = "website" }) => `<!doctype html>
 <html lang="en">
