@@ -1,5 +1,5 @@
 import { SITE_URL } from "./constants.mjs";
-import { footer, nav, shellHead } from "./templates.mjs";
+import { footer, merch, nav, shellHead } from "./templates.mjs";
 import { escapeHtml, escapeXml, fmtDate, renderAuthorInline, toISODate } from "./utils.mjs";
 
 export const renderHome = (articles) => `
@@ -48,6 +48,8 @@ ${nav}
         .join("")}
     </div>
   </section>
+
+  ${merch}
 </main>
 ${footer}
 `;
@@ -75,6 +77,8 @@ ${nav}
       <div class="article-prose">${article.html}</div>
     </div>
   </article>
+
+  ${merch}
 
   <div class="mt-8">
     <a href="/" class="inline-flex items-center gap-2 text-sm">
@@ -167,6 +171,8 @@ ${nav}
       <p class="mt-4 text-xs text-zinc-500">Unsubscribe anytime. We never share your email.</p>
     </form>
   </article>
+
+  ${merch}
 
   <div class="mt-8">
     <a href="/" class="inline-flex items-center gap-2 text-sm">
