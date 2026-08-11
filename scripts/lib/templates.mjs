@@ -1,6 +1,8 @@
 import { SITE_URL } from "./constants.mjs";
 import { escapeHtml } from "./utils.mjs";
 
+const STORE_URL = "https://store.apophenia.news";
+
 const logo = `
 <svg class="h-10 w-10 brand-glow" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apophenia News logo">
   <defs>
@@ -17,6 +19,22 @@ const logo = `
   <path d="M36 36L84 84M84 36L36 84M36 36H84M36 84H84" stroke="#111827" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/>
   <circle cx="60" cy="60" r="10" fill="#111827"/>
 </svg>`;
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/newsletter/", label: "Newsletter" },
+  { href: STORE_URL, label: "Store", external: true },
+  { href: "/write/", label: "Become a writer" },
+  { href: "/rss.xml", label: "RSS" }
+];
+
+const navLinks = (cls = "") =>
+  links
+    .map(
+      (l) =>
+        `<a ${cls ? `class="${cls}" ` : ""}href="${l.href}"${l.external ? ` target="_blank" rel="noopener"` : ""}>${l.label}</a>`
+    )
+    .join("\n      ");
 
 export const shellHead = ({ title, desc, image, url, type = "website" }) => `<!doctype html>
 <html lang="en">
@@ -54,16 +72,10 @@ export const nav = `
       <i data-lucide="menu" class="h-4 w-4"></i>
     </button>
     <nav class="hidden sm:flex items-center gap-6 text-sm">
-      <a href="/">Home</a>
-      <a href="/newsletter/">Newsletter</a>
-      <a href="/write/">Become a writer</a>
-      <a href="/rss.xml">RSS</a>
+      ${navLinks()}
     </nav>
     <nav class="sm:hidden absolute left-4 right-4 top-[70px] card p-3" x-show="open" x-transition>
-      <a class="block py-1.5" href="/">Home</a>
-      <a class="block py-1.5" href="/newsletter/">Newsletter</a>
-      <a class="block py-1.5" href="/write/">Become a writer</a>
-      <a class="block py-1.5" href="/rss.xml">RSS</a>
+      ${navLinks("block py-1.5")}
     </nav>
   </div>
 </header>
