@@ -44,13 +44,25 @@ Now imagine the day that we connect the internet to another galaxy or civilizati
 
 **What sort of debates and controversies are we going to have?**
 
-Because it won't be a celebration. It will be a *fight*. It will be the most vicious policy war in human history, and it will make every previous internet governance dispute — net neutrality, encryption backdoors, content moderation, data sovereignty — look like a homeowners' association meeting.
+Here's the one that gets me. Currently, most countries extradite to the US. That's the arrangement — you break American law from a bedroom in another hemisphere, you can end up in an American courtroom, and your own government will hand you over. We've normalized it so thoroughly that it barely registers as remarkable.
 
-The first argument will be whether to federate or firewall — full peering, or a demilitarized zone with an air gap and an interpreter standing between us. Then someone will ask whose protocol wins, and the room will go quiet, because TCP/IP is a human artifact with human assumptions baked into it and theirs will have theirs. Someone has to concede. And concession is architecture, and architecture is power.
+So now imagine we get connected to a more advanced and intelligent alien civilization. If humans break laws across this new internet — **would we extradite to them?**
 
-Then the worst question of all: who speaks for Earth? Right now, nobody. There is no body with the standing to negotiate a treaty on behalf of the species, and yet somebody is going to have to sign something. Behind that sits the matter of what actually crosses the boundary — our archives, our history, our art, our vulnerabilities — and whether we can even tell the difference between those categories once they're serialized into packets.
+Think about what the answer implies either way. If yes, then somewhere there's a treaty where Earth agrees that a teenager in Ohio can be shipped to a jurisdiction whose legal philosophy we may not be cognitively equipped to comprehend, for violating a statute we may not be able to parse. If no, then we've declared ourselves a rogue jurisdiction to a civilization millions of years our senior, and we should probably think hard about what the enforcement mechanism looks like when the other party doesn't need our cooperation.
 
-And finally, quietly, the question nobody wants to raise: is refusal even legible? If we say no, do they hear "no"? Or do they hear an unmaintained legacy system and start writing the patch?
+And extradition assumes the cleanest possible case: that we both agree a crime occurred. The messier reality is that most of it won't map. Half our felonies might be meaningless to them. Half their capital offenses might be things we do recreationally, constantly, without a second thought.
+
+Which naturally leads somewhere darker and much funnier.
+
+Perhaps there will be sections of the intergalactic internet like 4chan, where there are no rules. There always are. Every network in history has grown its own unpoliced back room within about ten minutes of coming online, and there is no reason to think a galactic one is exempt. Somewhere out past the moderated diplomatic channels and the sanitized cultural-exchange portals, there will be a board with no rules, and it will be the most interesting place in the galaxy.
+
+**What sorts of jokes or memes could potentially be created there?**
+
+Imagine the intergalactic internet memes. Not translated jokes — *native* ones. Humor built from the collision of two species' assumptions, formats that require a nervous system we don't have to fully appreciate. Copypasta about human mortality that we find unbearably offensive and they find merely observational. Reaction images of us — the species that took four billion years to invent the wheel and then immediately used its network to argue. Bait threads engineered by something with a million-year attention span, still running, still working.
+
+Some of it will be genuinely dangerous. A meme optimized by a superior intelligence isn't a joke, it's a payload. And some of it will just be funny, in that specific way where you're not entirely sure whether you're laughing with them or you're the punchline.
+
+Probably both. It usually is.
 
 ![Firewall breach](https://direct-img.link/firewall+breach+cyber+attack+red+glow)
 
