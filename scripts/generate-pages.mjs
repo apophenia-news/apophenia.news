@@ -2,15 +2,28 @@ import fs from "node:fs/promises";
 import fg from "fast-glob";
 import matter from "gray-matter";
 import { marked } from "marked";
-import { ARTICLES_GLOB, AUTHOR_PAGES, ROOT, SRC } from "./lib/constants.mjs";
+import { ARTICLES_GLOB, AUTHOR_PAGES, ROOT, SRC, UNLISTED_PATH } from "./lib/constants.mjs";
 import { fixInternalLinks } from "./lib/utils.mjs";
 import { renderArticle, renderHome, renderWritePage, renderNewsletterPage, renderAuthorPage } from "./lib/renderers.mjs";
 import { ensureCleanGenerated, writeDiscoveryFiles, writePage } from "./lib/io.mjs";
 
 marked.setOptions({ breaks: true, gfm: true });
 
+const getUnlistedSlugs = async () => {
+  try {
+    const raw = await fs.readFile(UNLISTED_PATH, "utf8");
+    return new Set(raw.split("\n").map((s) => s.trim()).filter((s) => s && !s.startsWith("#")));
+  } catch {
+    return new Set();
+  }
+};
+
 const run = async () => {
-  const files = await fg(ARTICLES_GLOB, { cwd: ROOT, absolute: true });
+  const [files, unlisted] = await Promise.all([
+    fg(ARTICLES_GLOB, { cwd: ROOT, absolute: true }),
+    getUnlistedSlugs()
+  ]);
+
   const articles = [];
 
   for (const file of files) {
@@ -20,15 +33,17 @@ const run = async () => {
 
     articles.push({
       ...data,
+      isUnlisted: unlisted.has(data.slug),
       html: fixInternalLinks(marked.parse(content))
     });
   }
 
   articles.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  const listedArticles = articles.filter((a) => !a.isUnlisted);
 
   await ensureCleanGenerated();
 
-  await writePage([SRC, "index.html"], renderHome(articles));
+  await writePage([SRC, "index.html"], renderHome(listedArticles));
   await writePage([SRC, "write", "index.html"], renderWritePage());
   await writePage([SRC, "newsletter", "index.html"], renderNewsletterPage());
 
@@ -40,9 +55,9 @@ const run = async () => {
     await writePage([SRC, article.slug, "index.html"], renderArticle(article));
   }
 
-  await writeDiscoveryFiles(articles, AUTHOR_PAGES);
+  await writeDiscoveryFiles(listedArticles, AUTHOR_PAGES);
 
-  console.log(`Generated ${articles.length} article pages + home + write + newsletter + author pages + rss/sitemap/robots.`);
+  console.log(`Generated ${articles.length} article pages (${listedArticles.length} listed) + home + write + newsletter + author pages + rss/sitemap/robots.`);
 };
 
 run().catch((err) => {
