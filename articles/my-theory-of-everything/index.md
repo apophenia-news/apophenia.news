@@ -1,7 +1,7 @@
 ---
 title: "My Theory of Everything"
 slug: my-theory-of-everything
-date: 2026-08-17
+date: 2026-08-16
 author: "[Renox](/author/renox/) and Kimi K3"
 description: "Why does anything exist? Why doesn't nothing exist instead? Both are true — and from that single fact, everything else follows: time, order, God, and the layers above infinity."
 header_image: https://direct-img.link/infinite+layers+of+reality+cosmic+fractal+zero+and+one
