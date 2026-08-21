@@ -4,7 +4,7 @@ slug: my-theory-of-everything
 date: 2026-08-16
 author: "[Renox](/author/renox/) and Kimi K3"
 description: "Why does anything exist? Why doesn't nothing exist instead? Both are true — and from that single fact, everything else follows: time, order, God, and the layers above infinity."
-header_image: https://direct-img.link/infinite+layers+of+reality+cosmic+fractal+zero+and+one
+header_image: https://direct-img.link/nested+multiverse+dimensions+fractal+glowing+layers
 tags:
   - theory-of-everything
   - existence
@@ -20,7 +20,7 @@ tags:
 
 # My Theory of Everything
 
-![Zero and one, cosmic](https://direct-img.link/infinite+layers+of+reality+cosmic+fractal+zero+and+one)
+![Nested multiverse dimensions](https://direct-img.link/nested+multiverse+dimensions+fractal+glowing+layers)
 
 ## The Only Two Questions
 
