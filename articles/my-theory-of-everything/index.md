@@ -51,8 +51,6 @@ This is the move most people can't make, and it's the reason the question feels 
 
 ![Infinite library of all possible books](https://direct-img.link/infinite+library+endless+bookshelves+surreal+cosmic)
 
-So existence and nonexistence aren't competing answers to the two questions. They're the same fact described from two vantages. From outside the totality: zero. From inside any part of it: everything. The two questions resolve into one object, seen twice.
-
 It follows that reality is infinite. But — and this matters — **within the infiniteness, linear time also exists.** Infinity is not the negation of sequence. It's the container of every sequence.
 
 ## Everything Within Everything: The Layers of Time
