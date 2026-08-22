@@ -49,8 +49,6 @@ Reality must meet *all* conditions. Not some conditions. Not the conditions we f
 
 This is the move most people can't make, and it's the reason the question feels impossible. We assume it's *either* 0 *or* 1. Either something exists or nothing does. But that's a false fork. It can be — and is — that **0 and 1 are true at the same time.**
 
-And here's the mechanism that makes it coherent rather than contradictory: nothingness is not the *absence* of everything. Nothingness is the *sum* of everything. If every possible configuration exists with equal weight, then nothing is selected — and a totality in which nothing is selected is, viewed from outside, indistinguishable from nothing at all. A library containing every possible book contains no information. Perfect superposition sums to null.
-
 ![Infinite library of all possible books](https://direct-img.link/infinite+library+endless+bookshelves+surreal+cosmic)
 
 So existence and nonexistence aren't competing answers to the two questions. They're the same fact described from two vantages. From outside the totality: zero. From inside any part of it: everything. The two questions resolve into one object, seen twice.
