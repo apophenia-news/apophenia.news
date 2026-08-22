@@ -109,7 +109,7 @@ There may be many gods, naturally born across the infinite — powers of the sec
 
 Is the highest God just the biggest possibility in the infinite? Or is there a place for a God that exists *over* the infinite?
 
-The logical answer: **the infinite gives birth to the highest God.** But — and this is the part that matters — that does not mean God is limited. Being born of the infinite is the only way to *contain* the infinite. A God that stood outside the totality and made it would be smaller than it — one bounded thing, facing its creation. A God born within the infinite, made of it, has no boundary at all. Origin isn't a limitation here. It's the mechanism of totality.
+The logical answer: **the infinite gives birth to the highest God.** But — and this is the part that matters — that does not mean God is limited. Being born of the infinite is the only way to *contain* the infinite. A God that stood outside the totality and made it would be one more unexplained existent — a bounded thing facing its creation, its own existence no more accounted for than the universe it supposedly explains. But a God born within the infinite, made of it, has no boundary at all — and its existence isn't a mystery bolted onto the theory; it follows from the same necessity that makes the infinite exist in the first place. Origin isn't a limitation here. It's the mechanism of totality.
 
 ![Divine light emerging from the infinite cosmos](https://direct-img.link/divine+light+emerging+from+cosmos+god+rays+infinite+majestic)
 
