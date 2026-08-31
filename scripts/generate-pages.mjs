@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import path from "node:path";
 import fg from "fast-glob";
 import matter from "gray-matter";
 import { marked } from "marked";
@@ -18,6 +19,21 @@ const getUnlistedSlugs = async () => {
   }
 };
 
+const copyArticleAssets = async (file, slug) => {
+  const dir = path.dirname(file);
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  await Promise.all(
+    entries
+      .filter((entry) => entry.name !== "index.md")
+      .map((entry) =>
+        fs.cp(path.join(dir, entry.name), path.join(SRC, slug, entry.name), {
+          recursive: true,
+          force: true
+        })
+      )
+  );
+};
+
 const run = async () => {
   const [files, unlisted] = await Promise.all([
     fg(ARTICLES_GLOB, { cwd: ROOT, absolute: true }),
@@ -33,6 +49,7 @@ const run = async () => {
 
     articles.push({
       ...data,
+      sourceFile: file,
       isUnlisted: unlisted.has(data.slug),
       html: fixInternalLinks(marked.parse(content))
     });
@@ -53,6 +70,7 @@ const run = async () => {
 
   for (const article of articles) {
     await writePage([SRC, article.slug, "index.html"], renderArticle(article));
+    await copyArticleAssets(article.sourceFile, article.slug);
   }
 
   await writeDiscoveryFiles(listedArticles, AUTHOR_PAGES);
