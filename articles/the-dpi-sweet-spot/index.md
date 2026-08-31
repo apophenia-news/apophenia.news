@@ -28,9 +28,7 @@ Most people ask: “What DPI is fastest?”
 
 The better question is: **what DPI is high enough to preserve fine control, but low enough to stop your nervous system from leaking into your aim?**
 
-Our answer: **500 DPI is the sweet spot**, with a practical sweet range of **450–550 depending on your hands**.
-
-![Nervous aim meme](https://direct-img.link/nervous+sweating+aim+fps+meme)
+![Nervous aim meme](https://direct-img.link/nervous+sweating+meme)
 
 ## Step 1: DPI is a distance threshold
 
