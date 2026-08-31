@@ -2,6 +2,7 @@
 @import "@fontsource/source-serif-4/400.css";
 @import "@fontsource/source-serif-4/600.css";
 @import "@fontsource/source-serif-4/700.css";
+@import "katex/dist/katex.min.css";
 
 @tailwind base;
 @tailwind components;
@@ -43,6 +44,10 @@
 
   .article-prose {
     @apply prose prose-zinc max-w-none prose-headings:font-serif prose-headings:text-zinc-900 prose-p:text-zinc-800 prose-li:text-zinc-800 prose-strong:text-zinc-900 prose-a:text-indigo-600 hover:prose-a:text-indigo-700 prose-img:rounded-xl prose-img:shadow-md;
+  }
+
+  .article-prose .katex-display {
+    @apply my-6 overflow-x-auto overflow-y-hidden py-2 text-center;
   }
 
   .tag {
