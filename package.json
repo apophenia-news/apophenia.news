@@ -16,8 +16,10 @@
     "@fontsource/source-serif-4": "^5.1.0",
     "alpinejs": "^3.14.1",
     "gray-matter": "^4.0.3",
+    "katex": "^0.16.21",
     "lucide": "^0.511.0",
-    "marked": "^13.0.2"
+    "marked": "^13.0.2",
+    "marked-katex-extension": "^5.1.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
