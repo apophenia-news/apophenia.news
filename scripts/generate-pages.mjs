@@ -3,11 +3,13 @@ import path from "node:path";
 import fg from "fast-glob";
 import matter from "gray-matter";
 import { marked } from "marked";
+import markedKatex from "marked-katex-extension";
 import { ARTICLES_GLOB, AUTHOR_PAGES, ROOT, SRC, UNLISTED_PATH } from "./lib/constants.mjs";
 import { fixInternalLinks } from "./lib/utils.mjs";
 import { renderArticle, renderHome, renderWritePage, renderNewsletterPage, renderAuthorPage } from "./lib/renderers.mjs";
 import { ensureCleanGenerated, writeDiscoveryFiles, writePage } from "./lib/io.mjs";
 
+marked.use(markedKatex({ throwOnError: false, nonStandard: true }));
 marked.setOptions({ breaks: true, gfm: true });
 
 const getUnlistedSlugs = async () => {
