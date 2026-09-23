@@ -65,14 +65,14 @@ ${shellHead({
 ${nav}
 <main class="shell py-10">
   <article class="card overflow-hidden">
-    <div class="flex justify-end px-6 py-3 sm:px-10">
-      <button type="button" data-copy-article class="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-medium text-zinc-800 shadow-sm transition hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400">
-        <i data-lucide="copy" class="h-4 w-4"></i><span aria-live="polite">Copy article</span>
-      </button>
-    </div>
     <img src="${article.header_image}" alt="${escapeHtml(article.title)}" class="h-64 w-full object-cover" />
     <div class="p-6 sm:p-10">
-      <p class="text-xs uppercase tracking-wide text-zinc-500">${fmtDate(article.date)} • ${renderAuthorInline(article.author)}</p>
+      <div class="flex items-center justify-between gap-4">
+        <p class="text-xs uppercase tracking-wide text-zinc-500">${fmtDate(article.date)} • ${renderAuthorInline(article.author)}</p>
+        <button type="button" data-copy-article aria-label="Copy article" class="inline-flex shrink-0 items-center gap-2 rounded-lg border border-zinc-200 bg-white px-2 py-2 text-sm font-medium text-zinc-800 shadow-sm transition hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 sm:px-3">
+          <i data-lucide="copy" class="h-4 w-4"></i><span aria-live="polite" class="hidden sm:inline">Copy article</span>
+        </button>
+      </div>
       <h1 class="mt-2 text-4xl sm:text-5xl font-bold leading-tight">${escapeHtml(article.title)}</h1>
       <p class="mt-4 text-zinc-700 max-w-3xl">${escapeHtml(article.description || "")}</p>
       <div class="mt-5 flex flex-wrap gap-2">
