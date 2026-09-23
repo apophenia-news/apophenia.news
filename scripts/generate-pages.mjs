@@ -52,6 +52,7 @@ const run = async () => {
     articles.push({
       ...data,
       sourceFile: file,
+      markdown: md,
       isUnlisted: unlisted.has(data.slug),
       html: fixInternalLinks(marked.parse(content))
     });
