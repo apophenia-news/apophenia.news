@@ -1,4 +1,4 @@
-import { SITE_URL } from "./constants.mjs";
+import { SITE_URL, TURNSTILE_SITE_KEY } from "./constants.mjs";
 import { footer, merch, nav, shellHead } from "./templates.mjs";
 import { escapeHtml, escapeXml, fmtDate, renderAuthorInline, toISODate } from "./utils.mjs";
 
@@ -123,22 +123,27 @@ ${nav}
           this.error = '';
           this.ok = false;
           this.loading = true;
+          const token = () => this.$el.querySelector('[name=cf-turnstile-response]')?.value;
+          for (let i = 0; i < 50 && !token(); i++) await new Promise((r) => setTimeout(r, 100));
           try {
             const res = await fetch('https://newsletter.planetrenox.com/api/sub', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ pool: 'apophenia', email: this.email })
+              body: JSON.stringify({ pool: 'apophenia', email: this.email, token: token() || '' })
             });
             const data = await res.json();
             if (res.ok && data.ok) {
               this.ok = true;
               this.email = '';
             } else {
-              this.error = data.error === 'invalid email' ? 'That email doesn\\'t look right.' : 'Something went wrong. Please try again.';
+              this.error = data.error === 'invalid email' ? 'That email doesn\\'t look right.'
+                : data.error === 'captcha failed' ? 'Couldn\\'t verify you\\'re human. Please try again.'
+                : 'Something went wrong. Please try again.';
             }
           } catch (e) {
             this.error = 'Network error. Please try again.';
           }
+          window.turnstile?.reset();
           this.loading = false;
         }
       }"
@@ -164,6 +169,7 @@ ${nav}
           <i data-lucide="arrow-right" class="h-4 w-4"></i>
         </button>
       </div>
+      <div class="cf-turnstile mt-3" data-sitekey="${TURNSTILE_SITE_KEY}" data-appearance="interaction-only" data-size="flexible"></div>
 
       <p x-show="ok" x-cloak class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-700">
         <i data-lucide="check-circle" class="h-4 w-4"></i>
@@ -176,6 +182,7 @@ ${nav}
 
       <p class="mt-4 text-xs text-zinc-500">Unsubscribe anytime. We never share your email.</p>
     </form>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </article>
 
   ${merch}
