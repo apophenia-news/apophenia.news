@@ -180,7 +180,7 @@ ${nav}
         <span x-text="error"></span>
       </p>
 
-      <p class="mt-4 text-xs text-zinc-500"><a href="/unsubscribe/" class="underline">Unsubscribe</a> anytime. We never share your email.</p>
+      <p class="mt-4 text-xs text-zinc-500"><a href="/newsletter/unsubscribe" class="underline">Unsubscribe</a> anytime. We never share your email.</p>
     </form>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </article>
@@ -200,14 +200,14 @@ export const renderUnsubscribePage = () => `
 ${shellHead({
   title: "Unsubscribe — apophenia.news",
   desc: "Unsubscribe from the apophenia.news newsletter.",
-  url: `${SITE_URL}/unsubscribe/`
+  url: `${SITE_URL}/newsletter/unsubscribe`
 })}
 ${nav}
 <main class="shell py-10">
   <section class="card max-w-md mx-auto p-6 sm:p-8">
     <h1 class="text-3xl font-bold">Unsubscribe</h1>
     <p class="mt-3 text-zinc-600">Enter your email to stop receiving our newsletter.</p>
-    <form class="mt-6" x-data="{
+    <form class="mt-6" novalidate x-data="{
       email: '', loading: false, ok: false, error: '',
       async submit() {
         if (this.loading) return;

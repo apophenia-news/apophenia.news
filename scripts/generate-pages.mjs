@@ -66,7 +66,7 @@ const run = async () => {
   await writePage([SRC, "index.html"], renderHome(listedArticles));
   await writePage([SRC, "write", "index.html"], renderWritePage());
   await writePage([SRC, "newsletter", "index.html"], renderNewsletterPage());
-  await writePage([SRC, "unsubscribe", "index.html"], renderUnsubscribePage());
+  await writePage([SRC, "newsletter", "unsubscribe.html"], renderUnsubscribePage());
 
   for (const author of AUTHOR_PAGES) {
     await writePage([SRC, "author", author.slug, "index.html"], renderAuthorPage(author));
