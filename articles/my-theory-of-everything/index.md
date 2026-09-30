@@ -161,6 +161,10 @@ It's crazy that anything is real. It never stops being crazy.
 
 But it was never arbitrary.
 
+## Watch the Video
+
+<iframe style="width:100%;aspect-ratio:16/9;border:0" src="https://www.youtube.com/embed/m4l7jJHUZy8" title="My Theory of Everything" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 *Apophenia News — finding patterns in the noise since 2026*
