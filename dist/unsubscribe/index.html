@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renox — apophenia.news</title>
-  <meta name="description" content="Renox is the founder of apophenia.news." />
-  <meta property="og:title" content="Renox — apophenia.news" />
-  <meta property="og:description" content="Renox is the founder of apophenia.news." />
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://apophenia.news/author/renox/" />
-  <meta property="og:image" content="https://direct-img.link/author+profile+minimal+portrait+placeholder" />
+  <title>Unsubscribe — apophenia.news</title>
+  <meta name="description" content="Unsubscribe from the apophenia.news newsletter." />
+  <meta property="og:title" content="Unsubscribe — apophenia.news" />
+  <meta property="og:description" content="Unsubscribe from the apophenia.news newsletter." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apophenia.news/unsubscribe/" />
+  
   <meta name="theme-color" content="#fcfcfa" />
-  <link rel="canonical" href="https://apophenia.news/author/renox/" />
+  <link rel="canonical" href="https://apophenia.news/unsubscribe/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="apophenia.news RSS" href="https://apophenia.news/rss.xml" />
   <script data-goatcounter="https://apophenia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -67,21 +67,47 @@
 </header>
 
 <main class="shell py-10">
-  <article class="card p-6 sm:p-10">
-    <p class="tag mb-3"><i data-lucide="user-round" class="h-3.5 w-3.5"></i>Author</p>
-    <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Renox</h1>
-
-    <div class="mt-8 grid md:grid-cols-[240px,1fr] gap-8 items-start">
-      <div class="h-64 w-full rounded-2xl border border-dashed border-zinc-300 bg-zinc-50/70 flex items-center justify-center text-sm text-zinc-500">
-        Photo coming soon
-      </div>
-
-      <div class="article-prose max-w-none">
-        <p>Renox is the founder of apophenia.news.</p>
-        <p><strong>Contact:</strong> <a href="mailto:planetrenox@pm.me">planetrenox@pm.me</a></p>
-      </div>
-    </div>
-  </article>
+  <section class="card max-w-md mx-auto p-6 sm:p-8">
+    <h1 class="text-3xl font-bold">Unsubscribe</h1>
+    <p class="mt-3 text-zinc-600">Enter your email to stop receiving our newsletter.</p>
+    <form class="mt-6" x-data="{
+      email: '', loading: false, ok: false, error: '',
+      async submit() {
+        if (this.loading) return;
+        this.loading = true;
+        this.ok = false;
+        this.error = '';
+        try {
+          const res = await fetch('https://newsletter.planetrenox.com/api/unsub', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pool: 'apophenia', email: this.email.trim() })
+          });
+          const data = await res.json();
+          if (res.ok &amp;&amp; data.ok) {
+            this.ok = true;
+            this.email = '';
+          } else {
+            this.error = data.error === 'invalid email' ? 'Please enter a valid email address.' : 'Something went wrong. Please try again.';
+          }
+        } catch {
+          this.error = 'Could not connect. Please try again.';
+        } finally {
+          this.loading = false;
+        }
+      }
+    }" @submit.prevent="submit">
+      <label for="unsubscribe-email" class="block text-sm font-medium">Email address</label>
+      <input id="unsubscribe-email" name="email" type="email" autocomplete="email" required x-model="email" :disabled="loading"
+        placeholder="you@example.com" class="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      <button type="submit" :disabled="loading"
+        class="mt-3 w-full rounded-xl bg-accent px-4 py-3 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-60"
+        x-text="loading ? 'Unsubscribing…' : 'Unsubscribe'">Unsubscribe</button>
+      <p x-show="ok" x-cloak role="status" class="mt-4 text-sm text-emerald-700">You're unsubscribed from the Apophenia newsletter.</p>
+      <p x-show="error" x-cloak role="alert" x-text="error" class="mt-4 text-sm text-rose-700"></p>
+    </form>
+    <a href="/newsletter/" class="mt-6 inline-block text-sm">Back to newsletter</a>
+  </section>
 </main>
 
 <footer class="mt-16 border-t border-zinc-200 bg-white/70">
