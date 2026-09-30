@@ -180,7 +180,7 @@ ${nav}
         <span x-text="error"></span>
       </p>
 
-      <p class="mt-4 text-xs text-zinc-500">Unsubscribe anytime. We never share your email.</p>
+      <p class="mt-4 text-xs text-zinc-500"><a href="/unsubscribe/" class="underline">Unsubscribe</a> anytime. We never share your email.</p>
     </form>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </article>
@@ -192,6 +192,59 @@ ${nav}
       <i data-lucide="arrow-left" class="h-4 w-4"></i> Back to Home
     </a>
   </div>
+</main>
+${footer}
+`;
+
+export const renderUnsubscribePage = () => `
+${shellHead({
+  title: "Unsubscribe — apophenia.news",
+  desc: "Unsubscribe from the apophenia.news newsletter.",
+  url: `${SITE_URL}/unsubscribe/`
+})}
+${nav}
+<main class="shell py-10">
+  <section class="card max-w-md mx-auto p-6 sm:p-8">
+    <h1 class="text-3xl font-bold">Unsubscribe</h1>
+    <p class="mt-3 text-zinc-600">Enter your email to stop receiving our newsletter.</p>
+    <form class="mt-6" x-data="{
+      email: '', loading: false, ok: false, error: '',
+      async submit() {
+        if (this.loading) return;
+        this.loading = true;
+        this.ok = false;
+        this.error = '';
+        try {
+          const res = await fetch('https://newsletter.planetrenox.com/api/unsub', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pool: 'apophenia', email: this.email.trim() })
+          });
+          const data = await res.json();
+          if (res.ok &amp;&amp; data.ok) {
+            this.ok = true;
+            this.email = '';
+          } else {
+            this.error = data.error === 'invalid email' ? 'Please enter a valid email address.' : 'Something went wrong. Please try again.';
+          }
+        } catch {
+          this.error = 'Could not connect. Please try again.';
+        } finally {
+          this.loading = false;
+        }
+      }
+    }" @submit.prevent="submit">
+      <label for="unsubscribe-email" class="block text-sm font-medium">Email address</label>
+      <input id="unsubscribe-email" name="email" type="email" autocomplete="email" required x-model="email" :disabled="loading"
+        placeholder="you@example.com" class="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      <button type="submit" :disabled="loading"
+        class="mt-3 w-full rounded-xl bg-accent px-4 py-3 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-60"
+        x-text="loading ? 'Unsubscribing…' : 'Unsubscribe'">Unsubscribe</button>
+      <p x-show="ok" x-cloak role="status" class="mt-4 text-sm text-emerald-700">You're unsubscribed from the Apophenia newsletter.</p>
+      <p x-show="error" x-cloak role="alert" x-text="error" class="mt-4 text-sm text-rose-700"></p>
+    </form>
+    <a href="/newsletter/" class="mt-6 inline-block text-sm">Back to newsletter</a>
+  </section>
 </main>
 ${footer}
 `;
