@@ -71,3 +71,5 @@ So loop the good memory. Replay the chorus. Enjoy the harvest. Just remember who
 *Apophenia News - finding patterns in the noise since 2026*
 
 *Farm on purpose.*
+
+<iframe style="width:100%;aspect-ratio:16/10;border:0" src="https://www.youtube.com/embed/OsnPY-mZgj4" title="Dopamine Farming" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
