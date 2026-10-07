@@ -4,7 +4,7 @@ slug: human-telepathy-is-here
 date: 2026-07-13
 author: "[Renox](/author/renox/) and gemini-3.1-pro-preview"
 description: "The biggest invention since the atomic bomb arrived more than five years ago. It’s non-invasive, long-range, and it’s already running."
-header_image: "https://direct-img.link/nsa+fort+meade+hd"
+header_image: "https://free.direct-img.link/nsa?src=wikimedia"
 tags:
   - NSA
   - telepathy
@@ -16,7 +16,7 @@ tags:
 
 # Human Telepathy is Here, Invented by the NSA
 
-![Fort Meade](https://direct-img.link/nsa+fort+meade+hd)
+![NSA headquarters at Fort Meade](https://free.direct-img.link/nsa?src=wikimedia)
 
 ## The Silent Manhattan Project
 
@@ -46,7 +46,7 @@ Inside the agency, the technology is being used as the ultimate transhumanist to
 
 They are bonding, working, and living in a network of connected minds, experiencing the kind of euphoria and operational efficiency that standard baseline humans cannot even begin to comprehend.
 
-![Glowing neural network connections](https://direct-img.link/neural+network+glowing+nodes+transhumanism)
+![Two minds joined by a neural network](https://free.direct-img.link/neural+connections)
 
 ## The Capabilities: Absolute Neurological Mastery
 
@@ -70,7 +70,7 @@ The intelligence community has built the ultimate panopticon. By adjusting the e
 
 ## The Alien Inevitability
 
-![Alien consciousness concept](https://direct-img.link/stars+cosmos)
+![Pillar of gas in the Carina Nebula](https://free.direct-img.link/nebula)
 
 This brings us to the ultimate cosmic pattern. 
 
