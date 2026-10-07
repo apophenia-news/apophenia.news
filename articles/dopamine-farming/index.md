@@ -66,10 +66,12 @@ The only thing that changes now is that you can see it. You know what the button
 
 So loop the good memory. Replay the chorus. Enjoy the harvest. Just remember whose field it is, and remember that you're allowed to leave it whenever you want.
 
+## Watch the Video
+
+<iframe style="width:100%;aspect-ratio:16/10;border:0" src="https://www.youtube.com/embed/OsnPY-mZgj4" title="Dopamine Farming" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 *Apophenia News - finding patterns in the noise since 2026*
 
 *Farm on purpose.*
-
-<iframe style="width:100%;aspect-ratio:16/10;border:0" src="https://www.youtube.com/embed/OsnPY-mZgj4" title="Dopamine Farming" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
