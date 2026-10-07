@@ -58,3 +58,77 @@
     @apply inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border border-indigo-200 bg-soft text-indigo-700;
   }
 }
+
+/* Unsubscribe success check: ring draws -> disc pops -> tick draws -> wave + burst */
+.unsub-check {
+  overflow: visible;
+  filter: drop-shadow(0 12px 28px rgba(16, 185, 129, 0.35));
+}
+.unsub-check > * {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.uc-ring {
+  fill: none;
+  stroke: #10b981;
+  stroke-width: 4;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transform: rotate(-90deg);
+  animation: uc-draw 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.uc-disc {
+  fill: #10b981;
+  transform: scale(0);
+  animation: uc-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s forwards;
+}
+.uc-tick {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: uc-draw 0.35s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+.uc-wave {
+  fill: none;
+  stroke: #34d399;
+  stroke-width: 3;
+  opacity: 0;
+  animation: uc-wave 1s ease-out 0.85s forwards;
+}
+.uc-burst {
+  stroke: #34d399;
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-box: view-box;
+  animation: uc-burst 0.7s ease-out 0.95s forwards;
+}
+.uc-text {
+  opacity: 0;
+  animation: uc-rise 0.5s ease-out 1s forwards;
+}
+p.uc-text { animation-delay: 1.1s; }
+a.uc-text { animation-delay: 1.2s; }
+
+@keyframes uc-draw { to { stroke-dashoffset: 0; } }
+@keyframes uc-pop { to { transform: scale(1); } }
+@keyframes uc-wave {
+  0% { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+@keyframes uc-burst {
+  0% { opacity: 0; transform: scale(0.75); }
+  35% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.12); }
+}
+@keyframes uc-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .unsub-check *, .uc-text { animation-duration: 1ms !important; animation-delay: 0s !important; }
+}

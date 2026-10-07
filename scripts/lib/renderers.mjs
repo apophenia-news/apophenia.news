@@ -204,46 +204,73 @@ ${shellHead({
 })}
 ${nav}
 <main class="shell py-10">
-  <section class="card max-w-md mx-auto p-6 sm:p-8">
-    <h1 class="text-3xl font-bold">Unsubscribe</h1>
-    <p class="mt-3 text-zinc-600">Enter your email to stop receiving our newsletter.</p>
-    <form class="mt-6" novalidate x-data="{
-      email: '', loading: false, ok: false, error: '',
-      async submit() {
-        if (this.loading) return;
-        this.loading = true;
-        this.ok = false;
-        this.error = '';
-        try {
-          const res = await fetch('https://newsletter.planetrenox.com/api/unsub', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pool: 'apophenia', email: this.email.trim() })
-          });
-          const data = await res.json();
-          if (res.ok &amp;&amp; data.ok) {
-            this.ok = true;
-            this.email = '';
-          } else {
-            this.error = data.error === 'invalid email' ? 'Please enter a valid email address.' : 'Something went wrong. Please try again.';
-          }
-        } catch {
-          this.error = 'Could not connect. Please try again.';
-        } finally {
-          this.loading = false;
+  <section class="card max-w-md mx-auto p-6 sm:p-8" x-data="{
+    email: '', done: '', auto: false, loading: false, ok: false, error: '',
+    init() {
+      // ?email=a+b@x.com -> URLSearchParams turns '+' into ' ', and emails never contain spaces
+      const e = new URLSearchParams(location.search).get('email')?.trim().replace(/ /g, '+');
+      if (e) (this.email = e, this.auto = true, this.submit());
+    },
+    async submit() {
+      if (this.loading) return;
+      this.loading = true;
+      this.ok = false;
+      this.error = '';
+      try {
+        const res = await fetch('https://newsletter.planetrenox.com/api/unsub', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pool: 'apophenia', email: this.email.trim() })
+        });
+        const data = await res.json();
+        if (res.ok &amp;&amp; data.ok) {
+          this.done = data.email;
+          this.ok = true;
+          this.email = '';
+          history.replaceState(null, '', location.pathname);
+        } else {
+          this.error = data.error === 'invalid email' ? 'Please enter a valid email address.' : 'Something went wrong. Please try again.';
         }
+      } catch {
+        this.error = 'Could not connect. Please try again.';
+      } finally {
+        this.loading = false;
+        this.auto = false;
       }
-    }" @submit.prevent="submit">
-      <label for="unsubscribe-email" class="block text-sm font-medium">Email address</label>
-      <input id="unsubscribe-email" name="email" type="email" autocomplete="email" required x-model="email" :disabled="loading"
-        placeholder="you@example.com" class="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-      <button type="submit" :disabled="loading"
-        class="mt-3 w-full rounded-xl bg-accent px-4 py-3 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-60"
-        x-text="loading ? 'Unsubscribing…' : 'Unsubscribe'">Unsubscribe</button>
-      <p x-show="ok" x-cloak role="status" class="mt-4 text-sm text-emerald-700">You're unsubscribed from the Apophenia newsletter.</p>
-      <p x-show="error" x-cloak role="alert" x-text="error" class="mt-4 text-sm text-rose-700"></p>
-    </form>
-    <a href="/newsletter/" class="mt-6 inline-block text-sm">Back to newsletter</a>
+    }
+  }">
+    <div x-show="ok" x-cloak role="status" class="text-center py-2">
+      <svg class="unsub-check mx-auto h-32 w-32" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="uc-wave" cx="60" cy="60" r="44"/>
+        <g class="uc-burst">${[0, 45, 90, 135, 180, 225, 270, 315].map((a) => `<line x1="60" y1="9" x2="60" y2="2" transform="rotate(${a} 60 60)"/>`).join("")}</g>
+        <circle class="uc-disc" cx="60" cy="60" r="44"/>
+        <circle class="uc-ring" cx="60" cy="60" r="44" pathLength="1"/>
+        <path class="uc-tick" d="M39 61.5l14 14 28-29" pathLength="1"/>
+      </svg>
+      <h1 class="uc-text mt-5 text-3xl font-bold">You're unsubscribed</h1>
+      <p class="uc-text mt-3 text-zinc-600"><b class="text-zinc-900 break-all" x-text="done"></b> won't receive Apophenia emails anymore.</p>
+      <a href="/newsletter/" class="uc-text mt-6 inline-block text-sm">Changed your mind? Resubscribe</a>
+    </div>
+
+    <div x-show="auto &amp;&amp; !ok" x-cloak class="py-10 text-center text-zinc-600">
+      <span class="mx-auto mb-4 block h-10 w-10 animate-spin rounded-full border-4 border-emerald-100 border-t-emerald-500"></span>
+      Unsubscribing <b class="text-zinc-900 break-all" x-text="email"></b>…
+    </div>
+
+    <div x-show="!ok &amp;&amp; !auto">
+      <h1 class="text-3xl font-bold">Unsubscribe</h1>
+      <p class="mt-3 text-zinc-600">Enter your email to stop receiving our newsletter.</p>
+      <form class="mt-6" novalidate @submit.prevent="submit">
+        <label for="unsubscribe-email" class="block text-sm font-medium">Email address</label>
+        <input id="unsubscribe-email" name="email" type="email" autocomplete="email" required x-model="email" :disabled="loading"
+          placeholder="you@example.com" class="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        <button type="submit" :disabled="loading"
+          class="mt-3 w-full rounded-xl bg-accent px-4 py-3 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-60"
+          x-text="loading ? 'Unsubscribing…' : 'Unsubscribe'">Unsubscribe</button>
+        <p x-show="error" x-cloak role="alert" x-text="error" class="mt-4 text-sm text-rose-700"></p>
+      </form>
+      <a href="/newsletter/" class="mt-6 inline-block text-sm">Back to newsletter</a>
+    </div>
   </section>
 </main>
 ${footer}
