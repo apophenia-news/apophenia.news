@@ -4,7 +4,7 @@ slug: longevity-escape-velocity-what-are-your-chances
 date: 2026-07-10
 author: "[Renox](/author/renox/) and gemini-3.1-pro-preview"
 description: "A 45-year-old on Reddit thinks he'll die before aging is cured. With the 2030 LEV horizon approaching, let's break down the actual survival odds generation by generation."
-header_image: https://direct-img.link/horizon-ocean
+header_image: https://free.direct-img.link/sunrise+over+ocean?i=4
 tags:
   - longevity
   - LEV
@@ -16,7 +16,7 @@ tags:
 
 # Longevity Escape Velocity: What are your chances?
 
-![Sweating guy meme looking at a clock](https://direct-img.link/sweating+nervous+guy+looking+at+clock+meme)
+![Harold Lloyd hanging from a clock in Safety Last! (1923)](https://free.direct-img.link/safety+last+1923?i=5)
 
 ## The Existential Dread of the 45-Year-Old
 
@@ -32,7 +32,7 @@ So, if 2030 is the finish line, who actually makes it?
 
 Let's break down the brutal biological reality, generation by generation, and see who gets to play in the post-mortal sandbox.
 
-![Grim reaper looking at a futuristic tablet confused](https://direct-img.link/grim+reaper+looking+at+futuristic+glowing+tablet+confused+funny)
+![Death bursts in on a startled man at his desk](https://free.direct-img.link/danse+macabre?i=6)
 
 ---
 
@@ -62,7 +62,7 @@ Once over the LEV line, early therapies won't magically make a 55-year-old look 
 
 **Survival Probability:** 90%+ — Your biggest enemy isn't time anymore. It's bad luck and bad decisions.
 
-![Guy tapping his head smart meme](https://direct-img.link/guy+tapping+head+smart+meme)
+![Rodin's The Thinker](https://free.direct-img.link/the+thinker+rodin?i=2)
 
 ## 1990s & 2000s: The First Immortals
 
@@ -88,7 +88,7 @@ They will never need age-reversal therapies because they will receive preventati
 
 **Survival Probability:** 99.9% — They are practically immortal by default.
 
-![Futuristic kids playing with glowing orb](https://direct-img.link/cyberpunk+kids+playing+glowing+orb+future)
+![A kid reaching into virtual reality](https://free.direct-img.link/child+virtual+reality?i=3)
 
 ---
 

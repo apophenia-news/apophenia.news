@@ -6,7 +6,7 @@ export const renderHome = (articles) => `
 ${shellHead({
   title: "apophenia.news — The news outlet for pattern seekers",
   desc: "Signals, anomalies, civilization trajectories, and deep pattern analysis.",
-  image: "https://direct-img.link/constellation+data+points+minimal+white+background",
+  image: "https://free.direct-img.link/celestial+map?i=1",
   url: `${SITE_URL}/`,
   type: "website"
 })}
@@ -99,7 +99,7 @@ export const renderNewsletterPage = () => `
 ${shellHead({
   title: "Newsletter — apophenia.news",
   desc: "Subscribe to the apophenia.news newsletter. We won't spam you with everything — only the good stuff.",
-  image: "https://direct-img.link/cosmic+newsletter+signal+envelope+minimal",
+  image: "https://free.direct-img.link/radio+telescope?i=1",
   url: `${SITE_URL}/newsletter/`,
   type: "website"
 })}
@@ -280,7 +280,7 @@ export const renderWritePage = () => `
 ${shellHead({
   title: "Become a writer for apophenia.news",
   desc: "Pitch your pattern analysis. Email your story as a Markdown file for review and publication.",
-  image: "https://direct-img.link/writer+typing+cosmic+newsroom+editorial",
+  image: "https://free.direct-img.link/typewriter?i=2",
   url: `${SITE_URL}/write/`,
   type: "website"
 })}
@@ -309,7 +309,7 @@ slug: your-slug
 date: 2026-03-01
 author: Your Name or Alias
 description: "1-2 sentence summary"
-header_image: https://direct-img.link/your+image+query
+header_image: https://free.direct-img.link/your+image+query
 tags:
   - your-tag
   - another-tag
@@ -324,7 +324,7 @@ export const renderAuthorPage = (author) => `
 ${shellHead({
   title: `${author.name} — apophenia.news`,
   desc: author.bio,
-  image: author.image || "https://direct-img.link/author+profile+minimal+portrait+placeholder",
+  image: author.image || "https://free.direct-img.link/fountain+pen?i=7",
   url: `${SITE_URL}/author/${author.slug}/`,
   type: "profile"
 })}
