@@ -156,7 +156,7 @@ Are they? We don't know. But if they're smart — and some of them are very, ver
 
 ## The Alien Confirmation
 
-![Vintage photo of a flying saucer](https://free.direct-img.link/ufo?i=1)
+![Triangular UFO with glowing lights from the Belgian UFO wave](https://free.direct-img.link/ufo?i=5)
 
 In our [previous article](./when-aliens-arrive-they-already-know-what-youre-thinking), we argued that any sufficiently advanced civilization would inevitably develop electromagnetic telepathy. The same logic applies — with even greater force — to immortality.
 
