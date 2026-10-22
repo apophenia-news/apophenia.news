@@ -16,7 +16,7 @@ tags:
 
 # Longevity Escape Velocity: What are your chances?
 
-![Harold Lloyd hanging from a clock in Safety Last! (1923)](https://free.direct-img.link/safety+last+1923?i=5)
+![Star trails spinning over an aurora](https://free.direct-img.link/star+trails?i=12)
 
 ## The Existential Dread of the 45-Year-Old
 
@@ -62,7 +62,7 @@ Once over the LEV line, early therapies won't magically make a 55-year-old look 
 
 **Survival Probability:** 90%+ — Your biggest enemy isn't time anymore. It's bad luck and bad decisions.
 
-![Rodin's The Thinker](https://free.direct-img.link/the+thinker+rodin?i=2)
+![First light on a mountain peak](https://free.direct-img.link/alpenglow?i=3)
 
 ## 1990s & 2000s: The First Immortals
 
@@ -88,7 +88,7 @@ They will never need age-reversal therapies because they will receive preventati
 
 **Survival Probability:** 99.9% — They are practically immortal by default.
 
-![A kid reaching into virtual reality](https://free.direct-img.link/child+virtual+reality?i=3)
+![Giant sequoias that live for thousands of years](https://free.direct-img.link/giant+sequoia?i=1)
 
 ---
 
