@@ -26,7 +26,7 @@ tags:
 
 Before anything else, it needs to be said plainly: it is *crazy* that anything is real. Strip away every assumption, every habit of thought, and look at the raw fact — there is something. There is consciousness. We are here. That fact should never stop being shocking.
 
-![Caspar David Friedrich's Wanderer above the Sea of Fog](https://free.direct-img.link/wanderer+above+the+sea+of+fog?i=1)
+![A lone figure on a cliff above an endless coastline](https://free.direct-img.link/person+on+cliff+edge?i=8)
 
 And when you narrow life and everything down to its core, you arrive at exactly two questions:
 
@@ -49,7 +49,7 @@ Reality must meet *all* conditions. Not some conditions. Not the conditions we f
 
 This is the move most people can't make, and it's the reason the question feels impossible. We assume it's *either* 0 *or* 1. Either something exists or nothing does. But that's a false fork. It can be — and is — that **0 and 1 are true at the same time.**
 
-![The Library of Congress reading room](https://free.direct-img.link/library+of+congress+reading+room?i=2)
+![Endless sand dunes](https://free.direct-img.link/desert+dunes+sunset?i=4)
 
 It follows that reality is infinite. But — and this matters — **within the infiniteness, linear time also exists.** Infinity is not the negation of sequence. It's the container of every sequence.
 
@@ -59,7 +59,7 @@ If everything exists, then everything must exist *within* everything. That's not
 
 And this is what time actually is.
 
-![Circles nested within circles, without end](https://free.direct-img.link/fractal?i=7)
+![Mountain ridges fading into layers of cloud](https://free.direct-img.link/misty+mountains?i=1)
 
 **Time is the layers of everything existing within everything** — and of nothing existing at all times, too. Each moment is a layer. Each layer contains the others as structure, as record, as memory. The reason one moment comes "after" another isn't a river flowing; it's nesting. A state that contains a record of another state *is* later than it. Order emerges from containment. The layers' nesting is what we call time.
 
@@ -87,7 +87,7 @@ The first layer is every possibility being true — including the ugly ones. Tor
 
 But that's just the first layer of infinite thought.
 
-![Gustave Doré's tiers of light from Paradiso](https://free.direct-img.link/dore+paradiso?i=2)
+![Dawn light rising in layers above a summit](https://free.direct-img.link/mountain+above+clouds?i=1)
 
 Because if everything is true *at all times*, then there are layers *on top of* everything being true. Think it through: once the first layer exists — the raw plenitude, every possibility including the torture universes — then the next layer of "all must be true" arrives on top of it. And that second layer allows for literally anything: worlds that take control of the infinite. Gods that influence the infinite. Powers with different characters.
 
@@ -101,7 +101,7 @@ Read that again, because it's the engine of the whole upper structure: **anythin
 
 This may also explain something strange that people keep reporting. Maybe those creatures people see in DMT trips — the entities, the presences, the things that feel more real than real — are a lot of the creatures that are present in this world. Not hallucinations. Adjacent residents, perceived through a temporarily opened layer.
 
-![Hilma af Klint's The Ten Largest, No. 2](https://free.direct-img.link/hilma+af+klint?i=8)
+![Aurora curtains over a mountain coast](https://free.direct-img.link/aurora+borealis?i=3)
 
 ## Where This Puts God
 
@@ -111,7 +111,7 @@ Is the highest God just the biggest possibility in the infinite? Or is there a p
 
 The logical answer: **the infinite gives birth to the highest God.** But — and this is the part that matters — that does not mean God is limited. Being born of the infinite is the only way to *contain* the infinite. A God that stood outside the totality and made it would be one more unexplained existent — a bounded thing facing its creation, its own existence no more accounted for than the universe it supposedly explains. But a God born within the infinite, made of it, has no boundary at all — and its existence isn't a mystery bolted onto the theory; it follows from the same necessity that makes the infinite exist in the first place. Origin isn't a limitation here. It's the mechanism of totality.
 
-![Gustave Doré's The Empyrean](https://free.direct-img.link/dore+paradiso?i=7)
+![The Milky Way arching over a canyon](https://free.direct-img.link/milky+way+arch?i=6)
 
 Think of it as the totality's self-model. The point where the whole becomes an inside. The outside becoming an inside without ceasing to be the outside. God isn't the first thing. God is the whole thing, awake.
 

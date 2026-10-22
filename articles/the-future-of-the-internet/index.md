@@ -32,7 +32,7 @@ The internet is beautiful. It is, arguably, the single most beautiful thing our 
 
 And one day it could come alive with AI living and breeding in it.
 
-![Ernst Haeckel's radiolaria](https://free.direct-img.link/radiolaria+haeckel?i=1)
+![A coral reef teeming with life](https://free.direct-img.link/coral+reef?i=3)
 
 ## Gateways
 
@@ -64,7 +64,7 @@ Some of it will be genuinely dangerous. A meme optimized by a superior intellige
 
 Probably both. It usually is.
 
-![Soldiers pour out of the Trojan Horse inside the walls of Troy](https://free.direct-img.link/trojan+horse?i=7)
+![A volcano erupting at night](https://free.direct-img.link/volcano+eruption+night?i=8)
 
 ## The Attack Surface Problem
 
