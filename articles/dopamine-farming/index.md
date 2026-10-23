@@ -16,8 +16,6 @@ tags:
   - self-awareness
 ---
 
-# Dopamine Farming
-
 ![Brain section glowing in fluorescent color](https://free.direct-img.link/brain)
 
 ## The Loop You Already Know

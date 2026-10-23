@@ -16,8 +16,6 @@ tags:
   - reddit
 ---
 
-# Do We Need Irrevocable Rights to AI Amid This Ban Storm?
-
 ![Lightning striking from a storm cell over open plains](https://free.direct-img.link/lightning+storm?i=5)
 
 ## The Door Just Closes

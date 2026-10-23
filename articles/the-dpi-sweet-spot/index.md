@@ -16,8 +16,6 @@ tags:
   - gaming
 ---
 
-# The Mouse DPI Sweet Spot Is 500
-
 ![Gamer at a glowing keyboard, hand on the mouse](https://free.direct-img.link/esports?i=8)
 
 The theory started simply: DPI is not just “sensitivity.” DPI is a sampling grid. It decides how much physical hand motion is required before the mouse reports anything at all.

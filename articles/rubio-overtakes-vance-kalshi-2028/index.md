@@ -18,8 +18,6 @@ tags:
   - patterns
 ---
 
-# Rubio Overtakes Vance: The Kalshi Signal Nobody on Polymarket Sees
-
 ![Marco Rubio fielding questions from reporters](https://free.direct-img.link/secretary+rubio?i=6&src=wikimedia)
 
 ## The Crossover

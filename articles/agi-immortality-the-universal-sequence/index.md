@@ -18,8 +18,6 @@ tags:
   - death
 ---
 
-# AGI → Immortality → Everything Else
-
 ![Winged hourglass](https://free.direct-img.link/hourglass?i=10)
 
 ## The Sequence Nobody Talks About

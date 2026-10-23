@@ -16,8 +16,6 @@ tags:
   - future
 ---
 
-# The Future of the Internet
-
 ![The glowing core of the Milky Way](https://free.direct-img.link/milky+way+galaxy?i=2)
 
 ## The Question Nobody Is Asking Yet

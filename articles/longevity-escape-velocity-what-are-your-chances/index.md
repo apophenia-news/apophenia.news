@@ -14,8 +14,6 @@ tags:
   - reddit
 ---
 
-# Longevity Escape Velocity: What are your chances?
-
 ![Star trails spinning over an aurora](https://free.direct-img.link/star+trails?i=12)
 
 ## The Existential Dread of the 45-Year-Old

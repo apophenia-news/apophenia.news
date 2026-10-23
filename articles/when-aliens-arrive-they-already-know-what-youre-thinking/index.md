@@ -17,8 +17,6 @@ tags:
   - consciousness
 ---
 
-# When Aliens Arrive, They Already Know What You're Thinking
-
 ![Grey aliens staring back](https://free.direct-img.link/alien?i=7)
 
 ## "It's Almost Like They Knew What We Were Thinking"

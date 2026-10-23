@@ -18,8 +18,6 @@ tags:
   - reality
 ---
 
-# My Theory of Everything
-
 ![A fractal hall receding forever](https://free.direct-img.link/fractal?i=6)
 
 ## The Only Two Questions

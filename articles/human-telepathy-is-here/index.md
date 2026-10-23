@@ -14,8 +14,6 @@ tags:
   - aliens
 ---
 
-# Human Telepathy is Here, Invented by the NSA
-
 ![NSA headquarters at Fort Meade](https://free.direct-img.link/nsa?src=wikimedia)
 
 ## The Silent Manhattan Project
