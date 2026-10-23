@@ -3,6 +3,8 @@ export const fmtDate = (date) =>
 
 export const toISODate = (d) => new Date(d).toISOString().split("T")[0];
 
+export const toISO = (d) => new Date(d).toISOString();
+
 export const escapeHtml = (s = "") =>
   String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
 

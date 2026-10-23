@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 import fg from "fast-glob";
 import matter from "gray-matter";
@@ -18,6 +19,17 @@ const getUnlistedSlugs = async () => {
     return new Set(raw.split("\n").map((s) => s.trim()).filter((s) => s && !s.startsWith("#")));
   } catch {
     return new Set();
+  }
+};
+
+// When the article's folder was last committed, so editing an article (text or images) updates its modified date on
+// its own. CI checks out full history for this. "" for an uncommitted article, which then counts as unmodified.
+const lastCommit = (dir) => {
+  try {
+    const d = execFileSync("git", ["log", "-1", "--format=%aI", "--", dir], { encoding: "utf8" }).trim();
+    return d && new Date(d).toISOString();
+  } catch {
+    return "";
   }
 };
 
@@ -54,6 +66,7 @@ const run = async () => {
       sourceFile: file,
       markdown: md,
       isUnlisted: unlisted.has(data.slug),
+      modified: lastCommit(path.dirname(file)),
       html: fixInternalLinks(marked.parse(content))
     });
   }

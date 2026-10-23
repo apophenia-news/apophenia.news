@@ -1,6 +1,45 @@
 import { SITE_URL, TURNSTILE_SITE_KEY } from "./constants.mjs";
 import { footer, merch, nav, shellHead } from "./templates.mjs";
-import { escapeHtml, escapeXml, fmtDate, renderAuthorInline, toISODate } from "./utils.mjs";
+import { escapeHtml, escapeXml, fmtDate, renderAuthorInline, toISO, toISODate } from "./utils.mjs";
+
+// Structured data (JSON-LD) so Google reads the headline, image, dates and authors directly instead of guessing
+const absUrl = (u = "") => (/^https?:\/\//.test(u) ? u : `${SITE_URL}/${u.replace(/^\/+/, "")}`);
+const publisher = { "@type": "Organization", name: "apophenia.news", url: `${SITE_URL}/`, logo: `${SITE_URL}/favicon.svg` };
+
+// Linked names in the byline (people with an author page) become Person authors. Unlinked co-authors are AI models,
+// which schema.org has no type for, so they stay in the visible byline only.
+const authorsLd = (author = "") => {
+  const people = [...String(author).matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map(([, name, href]) => ({ "@type": "Person", name: name.trim(), url: absUrl(href.trim()) }));
+  return people.length ? people : [publisher];
+};
+
+// Published is the frontmatter date. Modified is the article folder's last commit (see generate-pages.mjs), never
+// earlier than published.
+const articleDates = (a) => {
+  const published = toISO(a.date);
+  return { published, modified: a.modified > published ? a.modified : published };
+};
+
+const articleLd = (a, { published, modified }) => ({
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  headline: a.title,
+  description: a.description,
+  image: [absUrl(a.header_image)],
+  datePublished: published,
+  dateModified: modified,
+  author: authorsLd(a.author),
+  publisher,
+  mainEntityOfPage: `${SITE_URL}/${a.slug}/`
+});
+
+const homeLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebSite", name: "apophenia.news", url: `${SITE_URL}/` },
+    { ...publisher, sameAs: ["https://youtube.com/@ApopheniaLoop"] }
+  ]
+};
 
 export const renderHome = (articles) => `
 ${shellHead({
@@ -8,7 +47,8 @@ ${shellHead({
   desc: "Signals, anomalies, civilization trajectories, and deep pattern analysis.",
   image: "https://free.direct-img.link/celestial+map?i=1",
   url: `${SITE_URL}/`,
-  type: "website"
+  type: "website",
+  jsonLd: homeLd
 })}
 ${nav}
 <main class="shell py-10">
@@ -54,13 +94,15 @@ ${nav}
 ${footer}
 `;
 
-export const renderArticle = (article) => `
+export const renderArticle = (article, dates = articleDates(article)) => `
 ${shellHead({
   title: `${article.title} — apophenia.news`,
   desc: article.description,
   image: article.header_image,
   url: `${SITE_URL}/${article.slug}/`,
-  type: "article"
+  type: "article",
+  ...dates,
+  jsonLd: articleLd(article, dates)
 })}
 ${nav}
 <main class="shell py-10">
@@ -408,7 +450,7 @@ export const renderSitemap = (articles, authors = []) => {
     { loc: `${SITE_URL}/newsletter/`, lastmod: now },
     { loc: `${SITE_URL}/write/`, lastmod: now },
     ...authors.map((a) => ({ loc: `${SITE_URL}/author/${a.slug}/`, lastmod: now })),
-    ...articles.map((a) => ({ loc: `${SITE_URL}/${a.slug}/`, lastmod: toISODate(a.date || new Date()) }))
+    ...articles.map((a) => ({ loc: `${SITE_URL}/${a.slug}/`, lastmod: toISODate(articleDates(a).modified) }))
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>

@@ -72,7 +72,7 @@ export const merch = `
 </section>
 `;
 
-export const shellHead = ({ title, desc, image, url, type = "website", noindex = false }) => `<!doctype html>
+export const shellHead = ({ title, desc, image, url, type = "website", noindex = false, published, modified, jsonLd }) => `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -85,7 +85,10 @@ export const shellHead = ({ title, desc, image, url, type = "website", noindex =
   ${url ? `<meta property="og:url" content="${url}" />` : ""}
   ${image ? `<meta property="og:image" content="${image}" />` : ""}
   <meta name="theme-color" content="#fcfcfa" />
-  ${noindex ? `<meta name="robots" content="noindex" />` : ""}
+  <meta name="robots" content="${noindex ? "noindex" : "max-image-preview:large"}" />
+  ${published ? `<meta property="article:published_time" content="${published}" />` : ""}
+  ${modified ? `<meta property="article:modified_time" content="${modified}" />` : ""}
+  ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>` : ""}
   ${url ? `<link rel="canonical" href="${url}" />` : ""}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="apophenia.news RSS" href="${SITE_URL}/rss.xml" />
