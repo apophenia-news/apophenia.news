@@ -72,7 +72,7 @@ export const merch = `
 </section>
 `;
 
-export const shellHead = ({ title, desc, image, url, type = "website" }) => `<!doctype html>
+export const shellHead = ({ title, desc, image, url, type = "website", noindex = false }) => `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -85,6 +85,7 @@ export const shellHead = ({ title, desc, image, url, type = "website" }) => `<!d
   ${url ? `<meta property="og:url" content="${url}" />` : ""}
   ${image ? `<meta property="og:image" content="${image}" />` : ""}
   <meta name="theme-color" content="#fcfcfa" />
+  ${noindex ? `<meta name="robots" content="noindex" />` : ""}
   ${url ? `<link rel="canonical" href="${url}" />` : ""}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="apophenia.news RSS" href="${SITE_URL}/rss.xml" />

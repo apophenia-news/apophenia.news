@@ -95,6 +95,29 @@ ${nav}
 ${footer}
 `;
 
+// Served by Cloudflare Pages with a 404 status for any path that doesn't exist (instead of falling back to the homepage)
+export const renderNotFound = () => `
+${shellHead({
+  title: "Page not found — apophenia.news",
+  desc: "This page doesn't exist.",
+  type: "website",
+  noindex: true
+})}
+${nav}
+<main class="shell py-10">
+  <section class="card p-6 sm:p-10 text-center bg-gradient-to-b from-white to-indigo-50/50">
+    <img src="https://vibegif.direct-img.link/detective/clue.webp" alt="Detective searching for clues with a magnifying glass" width="256" height="256" class="mx-auto h-48 w-48" />
+    <p class="tag mt-6 mb-3"><i data-lucide="search" class="h-3.5 w-3.5"></i>404</p>
+    <h1 class="text-4xl sm:text-5xl font-bold leading-tight">No pattern here</h1>
+    <p class="mt-4 text-zinc-700 max-w-xl mx-auto">This page doesn't exist or has moved. Even pattern seekers hit a dead end sometimes.</p>
+    <a href="/" class="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700">
+      <i data-lucide="arrow-left" class="h-4 w-4"></i> Back to Home
+    </a>
+  </section>
+</main>
+${footer}
+`;
+
 export const renderNewsletterPage = () => `
 ${shellHead({
   title: "Newsletter — apophenia.news",
