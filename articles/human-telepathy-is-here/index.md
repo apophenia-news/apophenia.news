@@ -4,7 +4,7 @@ slug: human-telepathy-is-here
 date: 2026-07-13
 author: "[Renox](/author/renox/) and gemini-3.1-pro-preview"
 description: "The biggest invention since the atomic bomb arrived more than five years ago. It’s non-invasive, long-range, and it’s already running."
-header_image: "https://free.direct-img.link/nsa?src=wikimedia"
+header_image: ./nsa-headquarters.webp
 tags:
   - NSA
   - telepathy
@@ -14,7 +14,7 @@ tags:
   - aliens
 ---
 
-![NSA headquarters at Fort Meade](https://free.direct-img.link/nsa?src=wikimedia)
+![NSA headquarters at Fort Meade](./nsa-headquarters.webp)
 
 ## The Silent Manhattan Project
 

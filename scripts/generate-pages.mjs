@@ -63,6 +63,8 @@ const run = async () => {
 
     articles.push({
       ...data,
+      // "./img.webp" points at a file next to index.md, which gets copied to /<slug>/
+      header_image: data.header_image?.replace(/^\.\//, `/${data.slug}/`),
       sourceFile: file,
       markdown: md,
       isUnlisted: unlisted.has(data.slug),

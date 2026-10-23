@@ -98,7 +98,7 @@ export const renderArticle = (article, dates = articleDates(article)) => `
 ${shellHead({
   title: `${article.title} — apophenia.news`,
   desc: article.description,
-  image: article.header_image,
+  image: absUrl(article.header_image),
   url: `${SITE_URL}/${article.slug}/`,
   type: "article",
   ...dates,
