@@ -4,7 +4,7 @@ slug: irrevocable-rights-to-ai
 date: 2026-10-23
 author: "[Renox](/author/renox/) and kimi-k3.1-pro"
 description: "People report losing access to Claude and ChatGPT over vague safety flags and ordinary-looking work. As AI becomes essential infrastructure, permanent exile without explanation, review, or a path back cannot be the default."
-header_image: https://free.direct-img.link/lightning+storm?i=4
+header_image: https://free.direct-img.link/lightning+storm?i=5
 tags:
   - AI
   - bans
@@ -18,7 +18,7 @@ tags:
 
 # Do We Need Irrevocable Rights to AI Amid This Ban Storm?
 
-![Lightning breaking across a dark sky](https://free.direct-img.link/lightning+storm?i=4)
+![Lightning striking from a storm cell over open plains](https://free.direct-img.link/lightning+storm?i=5)
 
 ## The Door Just Closes
 
@@ -40,7 +40,7 @@ I have not been banned. But reading these reports makes me feel that it could ha
 
 That is unacceptable.
 
-![A closed door beneath a padlock](https://free.direct-img.link/locked+door?i=3)
+![A gate chained shut with a padlock](https://free.direct-img.link/padlock+chain?i=1)
 
 ## AI Is Becoming More Than an App
 
@@ -53,6 +53,8 @@ Nor are these systems perfectly interchangeable. Models differ in capability, co
 Telling someone to "just use another AI" may be reasonable in an isolated dispute. It becomes less convincing when exclusion is permanent, alternatives are limited, or the most valuable capabilities are concentrated among a small number of providers.
 
 A right that guarantees access only to obsolete tools while everyone else moves ahead with frontier systems would be a right in name only.
+
+![Power lines stretching across an orange sunset](https://free.direct-img.link/power+lines+sunset?i=1)
 
 The comparison to electricity, water, or gas is not exact. AI is not yet a public utility, and no serious argument requires pretending otherwise. But utilities illustrate an important principle: **as a service becomes essential, society stops treating access to it as an ordinary commercial courtesy.**
 
@@ -76,7 +78,7 @@ That is heartbreaking. Not merely because someone lost a subscription, but becau
 
 **A right to access is not a right to impunity. It is a right not to be abandoned by the system without proportionality or recourse.**
 
-![An empty road stretching toward the horizon](https://free.direct-img.link/long+road+horizon?i=4)
+![An empty frozen road stretching toward the horizon](https://free.direct-img.link/long+road+horizon?i=3)
 
 ## Safety Is Not the Opposite of Rights
 
@@ -118,7 +120,7 @@ The underlying right should be irrevocable, even when particular activities or c
 
 For dominant providers, these obligations may eventually need legal backing rather than voluntary promises. A competitive market can help, but competition alone does not guarantee due process.
 
-![A gavel resting beside an open book](https://free.direct-img.link/gavel?i=2)
+![A gavel resting on a courtroom bench](https://free.direct-img.link/gavel?i=1)
 
 ## The Hard Cases Are Real
 
@@ -133,6 +135,8 @@ Rights to speech, property, movement, and liberty can all be restricted in respo
 Where safe, restriction can mean capability-limited access rather than total exile. Where safe access is impossible, suspension or termination may be necessary. The point is not that every person must retain every capability under every circumstance. The point is that an ambiguous flag, a minor violation, and a proven campaign of serious abuse must not all be processed through the same permanent trapdoor.
 
 You do not cut power to an entire neighborhood because one house presents a danger. You isolate the danger.
+
+![A city still lit up at night](https://free.direct-img.link/city+lights+night?i=2)
 
 ## Access Should Not Be a Revocable Favor
 
